@@ -1,0 +1,17 @@
+{
+  "background": "soccer-field-background.jpg",
+  "player": {
+    "name": "Tony Kross",
+    "img": "tony_kross.png",
+    "height": 100,
+    "width": 80
+  },
+  "enemies": [
+    {}
+  ],
+  "goal": {
+    "img": "football-goal.png",
+    "height": 200,
+    "width": 320
+  }
+}
