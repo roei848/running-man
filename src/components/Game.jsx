@@ -1,34 +1,44 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import Player from "./Player";
 import Goal from "./Goal";
+import Enemy from "./Enemy";
 
 const Game = ({settings, gameBorders}) => {
-    const [x, setX] = useState(gameBorders.width - settings.player.width);
-    const [y, setY] = useState(gameBorders.height - settings.player.height);
-    const [vx, setVx] = useState(0);
-    const [vy, setVy] = useState(0);
+    const [playerPosition, setPlayerPosition] = useState({
+        x: gameBorders.width - settings.player.width,
+        y: gameBorders.height - settings.player.height
+    });
+    const [playerVelocity, setPlayerVelocity] = useState({vx: 0, vy: 0});
     const [score, setScore] = useState(0);
 
 
     const resetPlayerPosition = useCallback(() => {
-        setX(gameBorders.width - settings.player.width);
-        setY(gameBorders.height - settings.player.height);
+        setPlayerPosition({
+            x: gameBorders.width - settings.player.width,
+            y: gameBorders.height - settings.player.height
+        })
     }, [gameBorders, settings])
+
+
+    const handlePlayerGoalCollision = useCallback(() => {
+        resetPlayerPosition();
+        setScore((prevScore) => prevScore + 1);
+    }, [resetPlayerPosition])
 
     useEffect(() => {
         const handleKeyDown = (event) => {
             switch (event.key) {
                 case 'ArrowUp':
-                    setVy(-1);
+                    setPlayerVelocity((prev) => ({...prev, vy: -1}));
                     break;
                 case 'ArrowDown':
-                    setVy(1);
+                    setPlayerVelocity((prev) => ({...prev, vy: 1}));
                     break;
                 case 'ArrowLeft':
-                    setVx(-1);
+                    setPlayerVelocity((prev) => ({...prev, vx: -1}));
                     break;
                 case 'ArrowRight':
-                    setVx(1);
+                    setPlayerVelocity((prev) => ({...prev, vx: 1}));
                     break;
                 default:
                     break;
@@ -38,16 +48,12 @@ const Game = ({settings, gameBorders}) => {
         const handleKeyUp = (event) => {
             switch (event.key) {
                 case 'ArrowUp':
-                    setVy(0);
-                    break;
                 case 'ArrowDown':
-                    setVy(0);
+                    setPlayerVelocity((prev) => ({...prev, vy: 0}));
                     break;
                 case 'ArrowLeft':
-                    setVx(0);
-                    break;
                 case 'ArrowRight':
-                    setVx(0);
+                    setPlayerVelocity((prev) => ({...prev, vx: 0}));
                     break;
                 default:
                     break;
@@ -55,20 +61,22 @@ const Game = ({settings, gameBorders}) => {
         };
 
         const movePlayer = () => {
-            // Calculate new positions
-            const newX = x + vx;
-            const newY = y + vy;
+            setPlayerPosition((prev) => {
+                const newX = prev.x + playerVelocity.vx;
+                const newY = prev.y + playerVelocity.vy;
 
-            // Check if the new position is within borders
-            if (
-                newX >= 0 &&
-                newX <= gameBorders.width - 80 &&
-                newY >= 0 &&
-                newY <= gameBorders.height - 100
-            ) {
-                setX(newX);
-                setY(newY);
-            }
+                // Check if the new position is within borders
+                if (
+                    newX >= 0 &&
+                    newX <= gameBorders.width - settings.player.width &&
+                    newY >= 0 &&
+                    newY <= gameBorders.height - settings.player.height
+                ) {
+                    return {x: newX, y: newY};
+                }
+
+                return prev;
+            });
         };
 
         const interval = setInterval(movePlayer, 5); // Adjust interval for smoother movement
@@ -81,61 +89,29 @@ const Game = ({settings, gameBorders}) => {
             window.removeEventListener('keydown', handleKeyDown);
             window.removeEventListener('keyup', handleKeyUp);
         };
-    }, [vx, vy, x, y, gameBorders]);
+    }, [playerVelocity, gameBorders, settings.player.width, settings.player.height]);
 
 
-    useEffect(() => {
-        const checkCollision = () => {
-            // Calculate player and goal positions
-            const playerLeft = x;
-            const playerRight = x + settings.player.width;
-            const playerTop = y;
-            const playerBottom = y + settings.player.height;
-
-            const goalLeft = 0;
-            const goalRight = settings.goal.width;
-            const goalTop = 0;
-            const goalBottom = settings.goal.height;
-
-            // Check for collision
-            if (
-                playerRight >= goalLeft &&
-                playerLeft <= goalRight &&
-                playerBottom >= goalTop &&
-                playerTop <= goalBottom
-            ) {
-                // Collision detected
-                setScore((prevScore) => prevScore + 1);
-                resetPlayerPosition()
-                console.log("Collision detected");
-            }
-        };
-
-        const interval = setInterval(checkCollision, 100); // Adjust interval for collision detection
-
-        return () => {
-            clearInterval(interval);
-        };
-    }, [x, y, settings, resetPlayerPosition]);
-
-
-    console.log("score:", score);
-
-    return (
-        <div className="game-wrapper">
-            <img
-                className="background-image"
-                alt=""
-                // src={"assets/football-soccer-field-background.jpg"}
-                src={`${process.env.PUBLIC_URL}/assets/${settings.background}`}
-            ></img>
-            <Player settings={settings} positionX={x} positionY={y}/>
-            <Goal settings={settings}/>
-            <div className="score">
-                Score: {score}
-            </div>
+    return <div className="game-wrapper">
+        <img
+            className="background-image"
+            alt=""
+            src={`${process.env.PUBLIC_URL}/assets/${settings.background}`}
+        ></img>
+        <Player player={settings.player} playerPosition={playerPosition}/>
+        {
+            score > 0 ? settings.enemies.slice(0, score).map(enemy => {
+                    return <Enemy enemy={enemy} player={settings.player} playerPosition={playerPosition}
+                                  onCollision={resetPlayerPosition} gameBorders={gameBorders}/>
+                }
+            ) : <></>
+        }
+        <Goal goal={settings.goal} player={settings.player} playerPosition={playerPosition}
+              onCollision={handlePlayerGoalCollision}/>
+        <div className="score">
+            Score: {score}
         </div>
-    );
+    </div>;
 }
 
 export default Game;

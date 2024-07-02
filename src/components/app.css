@@ -29,11 +29,11 @@ body {
     left: 0;
 }
 
-.player-img {
+.player-img, .enemy-img {
 
 }
 
-.player-img > img {
+.player-img > img, .enemy-img > img {
     height: 100px;
 }
 

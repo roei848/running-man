@@ -1,14 +1,12 @@
 import React from 'react';
 
-const Player = ({ settings, positionX, positionY }) => {
-
-
+const Player = ({ player, playerPosition }) => {
     return (
         <div
-            style={{ position: 'absolute', top: positionY, left: positionX, height: settings.player.height, width: settings.player.width }}
+            style={{ position: 'absolute', top: playerPosition.y, left: playerPosition.x, height: player.height, width: player.width }}
             className="player-img"
         >
-            <img src={`${process.env.PUBLIC_URL}/assets/${settings.player.img}`} alt="player" />
+            <img src={`${process.env.PUBLIC_URL}/assets/${player.img}`} alt="player" />
         </div>
     );
 };

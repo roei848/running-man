@@ -7,7 +7,30 @@
     "width": 80
   },
   "enemies": [
-    {}
+    {
+      "name": "Mbappe",
+      "img": "mbappe.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 2,
+      "speedY": 3
+    },
+    {
+      "name": "Van dijk",
+      "img": "van_dijk.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 1,
+      "speedY": 2
+    },
+    {
+      "name": "Harry Kane",
+      "img": "harry_kane.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 4,
+      "speedY": 1
+    }
   ],
   "goal": {
     "img": "football-goal.png",
