@@ -1,0 +1,176 @@
+{
+  "background": "soccer-field-background.jpg",
+  "player": {
+    "name": "Tony Kross",
+    "img": "tony_kross.png",
+    "height": 100,
+    "width": 80
+  },
+  "enemies": [
+    {
+      "name": "Mbappe",
+      "img": "mbappe.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 9,
+      "speedY": 8
+    },
+    {
+      "name": "Van dijk",
+      "img": "van_dijk.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 3,
+      "speedY": 5
+    },
+    {
+      "name": "Harry Kane",
+      "img": "harry_kane.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 7,
+      "speedY": 4
+    },
+    {
+      "name": "Kevin De Bruyne",
+      "img": "de_bruyne.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 4,
+      "speedY": 4
+    },
+    {
+      "name": "Cristiano Ronaldo",
+      "img": "ronaldo.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 6,
+      "speedY": 11
+    },
+    {
+      "name": "Lamine Yamal",
+      "img": "yamal.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 8,
+      "speedY": 5
+    },
+    {
+      "name": "Nicola Barella",
+      "img": "barella.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 4,
+      "speedY": 3
+    },
+    {
+      "name": "Marcel Sabitzer",
+      "img": "sabitzer.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 2,
+      "speedY": 9
+    },
+    {
+      "name": "Granit Xhaka",
+      "img": "xhaka.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 5,
+      "speedY": 9
+    },
+    {
+      "name": "Luka Modric",
+      "img": "modric.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 8,
+      "speedY": 3
+    },
+    {
+      "name": "Robert Lewandowski",
+      "img": "lewandowski.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 6,
+      "speedY": 6
+    },
+    {
+      "name": "Christian Eriksen",
+      "img": "eriksen.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 5,
+      "speedY": 4
+    },
+    {
+      "name": "Fifa",
+      "img": "fifa.png",
+      "height": 80,
+      "width": 110,
+      "speedX": 6,
+      "speedY": 10
+    },
+    {
+      "name": "Referee",
+      "img": "referee.jpg",
+      "height": 100,
+      "width": 80,
+      "speedX": 9,
+      "speedY": 11
+    },
+    {
+      "name": "Var",
+      "img": "var.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 3,
+      "speedY": 6
+    },
+    {
+      "name": "Mario Balotelli",
+      "img": "balotelli.jpeg",
+      "height": 160,
+      "width": 90,
+      "speedX": 4,
+      "speedY": 3
+    },
+    {
+      "name": "Zinedine Zidane",
+      "img": "zidane.jpeg",
+      "height": 90,
+      "width": 160,
+      "speedX": 12,
+      "speedY": 9
+    },
+    {
+      "name": "Marco Van Basten",
+      "img": "van_basten.jpeg",
+      "height": 100,
+      "width": 80,
+      "speedX": 7,
+      "speedY": 6
+    },
+    {
+      "name": "Greece",
+      "img": "greece.png",
+      "height": 180,
+      "width": 320,
+      "speedX": 2,
+      "speedY": 2
+    },
+    {
+      "name": "Zlatan Ibrahimovic",
+      "img": "zlatan.png",
+      "height": 240,
+      "width": 160,
+      "speedX": 12,
+      "speedY": 15
+    }
+  ],
+  "goal": {
+    "img": "trophy.png",
+    "height": 200,
+    "width": 130
+  }
+}
