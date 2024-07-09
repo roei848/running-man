@@ -29,16 +29,16 @@ const Game = ({settings, gameBorders}) => {
         const handleKeyDown = (event) => {
             switch (event.key) {
                 case 'ArrowUp':
-                    setPlayerVelocity((prev) => ({...prev, vy: -1}));
+                    setPlayerVelocity((prev) => ({...prev, vy: -2}));
                     break;
                 case 'ArrowDown':
-                    setPlayerVelocity((prev) => ({...prev, vy: 1}));
+                    setPlayerVelocity((prev) => ({...prev, vy: 2}));
                     break;
                 case 'ArrowLeft':
-                    setPlayerVelocity((prev) => ({...prev, vx: -1}));
+                    setPlayerVelocity((prev) => ({...prev, vx: -2}));
                     break;
                 case 'ArrowRight':
-                    setPlayerVelocity((prev) => ({...prev, vx: 1}));
+                    setPlayerVelocity((prev) => ({...prev, vx: 2}));
                     break;
                 default:
                     break;
