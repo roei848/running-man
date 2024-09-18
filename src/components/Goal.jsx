@@ -11,7 +11,7 @@ const Goal = ({ goal, player, playerPosition,  onCollision }) => {
         ) {
             onCollision();
         }
-    }, [playerPosition, goal.width, goal.height, onCollision]);
+    }, [playerPosition, player.height, player.width, goal.width, goal.height, onCollision]);
 
     return (
         <div
