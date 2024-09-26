@@ -1,0 +1,200 @@
+{
+  "background": "background2.jpeg",
+  "player": {
+    "name": "Hero",
+    "img": "hero.png",
+    "height": 100,
+    "width": 80
+  },
+  "enemies": [
+    {
+      "name": "Mbappe",
+      "img": "enemy1.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 9,
+      "speedY": 8
+    },
+    {
+      "name": "enemy2",
+      "img": "enemy2.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 3,
+      "speedY": 5
+    },
+    {
+      "name": "enemy3",
+      "img": "enemy3.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 7,
+      "speedY": 4
+    },
+    {
+      "name": "enemy4",
+      "img": "enemy4.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 4,
+      "speedY": 4
+    },
+    {
+      "name": "enemy5",
+      "img": "enemy5.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 6,
+      "speedY": 11
+    },
+    {
+      "name": "enemy6",
+      "img": "enemy6.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 8,
+      "speedY": 5
+    },
+    {
+      "name": "enemy7",
+      "img": "enemy7.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 4,
+      "speedY": 3
+    },
+    {
+      "name": "enemy8",
+      "img": "enemy8.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 2,
+      "speedY": 9
+    },
+    {
+      "name": "enemy9",
+      "img": "enemy9.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 5,
+      "speedY": 9
+    },
+    {
+      "name": "enemy10",
+      "img": "enemy10.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 8,
+      "speedY": 3
+    },
+    {
+      "name": "enemy11",
+      "img": "enemy11.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 6,
+      "speedY": 6
+    },
+    {
+      "name": "enemy12",
+      "img": "enemy12.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 5,
+      "speedY": 4
+    },
+    {
+      "name": "enemy13",
+      "img": "enemy13.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 6,
+      "speedY": 10
+    },
+    {
+      "name": "enemy14",
+      "img": "enemy14.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 4,
+      "speedY": 3
+    },
+    {
+      "name": "enemy15",
+      "img": "enemy15.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 3,
+      "speedY": 6
+    },
+    {
+      "name": "enemy16",
+      "img": "enemy16.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 4,
+      "speedY": 3
+    },
+    {
+      "name": "enemy17",
+      "img": "enemy17.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 8,
+      "speedY": 3
+    },
+    {
+      "name": "enemy18",
+      "img": "enemy18.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 7,
+      "speedY": 6
+    },
+    {
+      "name": "enemy19",
+      "img": "enemy19.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 2,
+      "speedY": 2
+    },
+    {
+      "name": "enemy20",
+      "img": "enemy20.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 5,
+      "speedY": 9
+    },
+    {
+      "name": "enemy21",
+      "img": "enemy21.png",
+      "height": 100,
+      "width": 80,
+      "speedX": 5,
+      "speedY": 12
+    },
+    {
+      "name": "enemy22",
+      "img": "enemy22.png",
+      "height": 180,
+      "width": 120,
+      "speedX": 7,
+      "speedY": 6
+    },
+    {
+      "name": "enemy23",
+      "img": "enemy23.png",
+      "height": 100,
+      "width": 120,
+      "speedX": 12,
+      "speedY": 9
+    }
+  ],
+  "goal": {
+    "img": "thropy2.png",
+    "height": 250,
+    "width": 170
+  }
+}
