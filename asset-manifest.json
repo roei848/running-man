@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/running-man/static/css/main.3a4fd779.css",
+    "main.js": "/running-man/static/js/main.39ea1c61.js",
+    "index.html": "/running-man/index.html",
+    "main.3a4fd779.css.map": "/running-man/static/css/main.3a4fd779.css.map",
+    "main.39ea1c61.js.map": "/running-man/static/js/main.39ea1c61.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a4fd779.css",
+    "static/js/main.39ea1c61.js"
+  ]
+}
